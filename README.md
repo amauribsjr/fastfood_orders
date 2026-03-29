@@ -1,11 +1,11 @@
 # fastfood_orders
 
-rodando:
+```rodando:
 javac *.java
-java FastFoodApp
+java FastFoodApp```
 
 tree:
-src/
+```src/
   Cargo.java
   FastFoodApp.java
   Funcionario.java
@@ -18,3 +18,4 @@ src/
   PersistenciaDados.java
   Produto.java
   StatusPedido.java
+```

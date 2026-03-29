@@ -1,5 +1,10 @@
 # fastfood_orders
-historico_pedidos.txt
+
+rodando:
+javac *.java
+java FastFoodApp
+
+tree:
 src/
   Cargo.java
   FastFoodApp.java

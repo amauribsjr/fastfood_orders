@@ -20,6 +20,9 @@ public class GerenciadorPedidosCozinha extends GerenciadorPedidos {
         System.out.println("--- Fila da Cozinha (Preparando) ---");
         for (Pedido p : pedidosRecebidos) {
             System.out.println("Senha: " + p.getSenha() + " | Cliente: " + p.getNomeCliente());
+            for (ItemPedido item : p.getItens()) {
+                System.out.println("   x" + item.getQuantidade() + " " + item.getProduto().getNome());
+            }
         }
         System.out.println("------------------------------------");
     }

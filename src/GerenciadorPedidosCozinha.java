@@ -25,19 +25,19 @@ public class GerenciadorPedidosCozinha extends GerenciadorPedidos {
     }
 
     public void marcarPedidoComoPronto(Pedido pedido, Funcionario cozinheiro) {
-        if (cozinheiro.getCargo() != Cargo.COZINHA && cozinheiro.getCargo() != Cargo.GERENTE) {
+        if (cozinheiro.getCargo() != Cargo.COZINHA) {
             System.out.println("Acesso Negado: Apenas cozinha pode preparar lanches.");
             return;
         }
-        
+
         pedido.setFuncionarioCozinheiro(cozinheiro);
         pedido.alternarStatus(StatusPedido.PRONTO);
         super.removerPedido(pedido, pedidosRecebidos);
-        
+
         caixaRef.adicionarPedidoPronto(pedido);
         System.out.println("Pedido " + pedido.getSenha() + " pronto! Enviado para entrega no caixa.");
     }
-    
+
     public Queue<Pedido> getPedidosRecebidos() {
         return pedidosRecebidos;
     }

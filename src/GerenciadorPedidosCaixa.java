@@ -25,7 +25,7 @@ public class GerenciadorPedidosCaixa extends GerenciadorPedidos {
     }
 
     public void registrarPagamento(Pedido pedido, Funcionario caixa, MetodoPagamento metodo) {
-        if (caixa.getCargo() != Cargo.CAIXA && caixa.getCargo() != Cargo.GERENTE) {
+        if (caixa.getCargo() != Cargo.CAIXA) {
             System.out.println("Acesso Negado: Funcionário não autorizado a receber pagamentos.");
             return;
         }

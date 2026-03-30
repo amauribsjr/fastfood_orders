@@ -2,7 +2,9 @@
 
 rodando:
 ```
+dentro de /src, basta rodar:
 javac *.java
+e, após compilar, rodar o app:
 java FastFoodApp
 ```
 

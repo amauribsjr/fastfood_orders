@@ -37,24 +37,22 @@ public class GerenciadorPedidosCaixa extends GerenciadorPedidos {
         System.out.println("Pagamento de R$ " + pedido.getPrecoTotal() + " registrado via " + metodo);
     }
 
-    public void marcarPedidoConcluido(Pedido pedido, Funcionario caixa) {
+    public void marcarPedidoConcluido(Pedido pedido, Funcionario caixa, Scanner sc) {
         if (!pedido.isFoiPago()) {
             System.out.println("Pedido ainda não foi pago. Solicitando pagamento agora...");
-            Scanner sc = new Scanner(System.in);
             System.out.println("Escolha o método (1-Dinheiro, 2-Cartao, 3-Pix): ");
-            int op = sc.nextInt();
+            int op = Integer.parseInt(sc.nextLine().trim());
             MetodoPagamento mp = (op == 1) ? MetodoPagamento.DINHEIRO : (op == 2) ? MetodoPagamento.CARTAO_DEBITO : MetodoPagamento.PIX;
             registrarPagamento(pedido, caixa, mp);
-            sc.close();
         }
 
         pedido.alternarStatus(StatusPedido.CONCLUIDO);
         super.removerPedido(pedido, pedidosProntos);
-        
+
         persistencia.salvarHistoricoPedido(pedido);
         System.out.println("Pedido " + pedido.getSenha() + " CONCLUÍDO e arquivado com sucesso!");
     }
-    
+
     public Queue<Pedido> getPedidosProntos() {
         return pedidosProntos;
     }

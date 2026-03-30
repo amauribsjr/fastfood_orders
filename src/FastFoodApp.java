@@ -109,7 +109,6 @@ public class FastFoodApp {
         switch (func.getCargo()) {
             case COZINHA: menuCozinha(func); break;
             case CAIXA:   menuCaixa(func);   break;
-            case GERENTE: menuGerente(func); break;
         }
     }
 
@@ -159,7 +158,7 @@ public class FastFoodApp {
                     if (p == null) {
                         System.out.println("[x] Nenhum pedido pronto para entrega.");
                     } else {
-                        gerCaixa.marcarPedidoConcluido(p, func);
+                        gerCaixa.marcarPedidoConcluido(p, func, sc);
                     }
                     break;
                 case 0:

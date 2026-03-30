@@ -2,10 +2,11 @@
 
 rodando:
 ```
+tenha o java jdk instalado;
 dentro de /src, basta rodar:
-javac *.java
+ javac *.java
 e, após compilar, rodar o app:
-java FastFoodApp
+ java FastFoodApp
 ```
 
 tree:
